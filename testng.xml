@@ -1,0 +1,11 @@
+<suite name="Group of group Suite" verbose="1">
+  <test name="Group of group Test">
+
+    <classes>
+      <class name="test.TestNgMavenExampleTest" />
+    </classes>
+  </test>
+</suite>
+
+
+
