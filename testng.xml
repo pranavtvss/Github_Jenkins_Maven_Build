@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Group of group Suite" verbose="1">
-  <test name="Group of group Test">
+  <test name="Jenkins Life Cycle Test">
 
     <classes>
       <class name="test.TestNgMavenExampleTest" />
