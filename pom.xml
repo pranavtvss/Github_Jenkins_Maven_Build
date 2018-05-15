@@ -35,6 +35,7 @@
   <build>
    <finalName>Github_Jenkins_Maven_Build</finalName>
     <sourceDirectory>src</sourceDirectory>
+ <testSourceDirectory>src/test</testSourceDirectory>
     <resources>
       <resource>
         <directory>src</directory>
