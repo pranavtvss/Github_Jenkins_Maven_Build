@@ -21,6 +21,14 @@ public class TestNgMavenExampleTest {
 		String s = " ";
 		AssertJUnit.assertNotNull(s);
 	}
+	
+	@Test
+	public void testFailureCheck() {
+		System.out.println("This is TestNG-Maven Example");
+		
+		String s = "g";
+		AssertJUnit.assertEquals(s, "");
+	}
 
 	
 }
