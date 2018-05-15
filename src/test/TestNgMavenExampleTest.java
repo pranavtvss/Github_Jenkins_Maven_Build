@@ -6,7 +6,7 @@ import org.testng.AssertJUnit;
 public class TestNgMavenExampleTest {
 
 	@Test
-	public void exampleOfTestNgMaven() {
+	public void testStringCompare() {
 		System.out.println("This is TestNG-Maven Example");
 		
 		String s = "initial";
