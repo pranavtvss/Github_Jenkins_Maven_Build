@@ -11,7 +11,17 @@ public class TestNgMavenExampleTest {
 		
 		String s = "initial";
 		AssertJUnit.assertEquals(s, "initial");
+		AssertJUnit.assertNotNull(s);
 	}
 	
+	@Test
+	public void testNullablity() {
+		System.out.println("This is TestNG-Maven Example");
+		
+		String s = " ";
+		AssertJUnit.assertNotNull(s);
+	}
+
 	
 }
+
