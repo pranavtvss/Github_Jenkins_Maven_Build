@@ -1,19 +1,19 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="Group of group Suite" verbose="1">
-  <test name="Jenkins Life Cycle Test">
 
+<suite name="Group of group Suite" verbose="1">
+  <test name="Group of group Test">
     <classes>
       <class name="test.TestNgMavenExampleTest" />
     </classes>
   </test>
-  
-     <test name="Jenkins Life Cycle Test 2">
+   
+   
+   <test name="Test2">
   <classes>
       <class name="test.TestNgMavenExampleTest2" />
     </classes>
      </test>
-  
-  
+    
 </suite>
 
 
