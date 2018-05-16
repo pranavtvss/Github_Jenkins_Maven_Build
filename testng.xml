@@ -7,7 +7,7 @@
     </classes>
   </test>
   
-     <test name="Test2">
+     <test name="Jenkins Life Cycle Test 2">
   <classes>
       <class name="test.TestNgMavenExampleTest2" />
     </classes>
