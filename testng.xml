@@ -6,6 +6,14 @@
       <class name="test.TestNgMavenExampleTest" />
     </classes>
   </test>
+  
+     <test name="Test2">
+  <classes>
+      <class name="test.TestNgMavenExampleTest2" />
+    </classes>
+     </test>
+  
+  
 </suite>
 
 
