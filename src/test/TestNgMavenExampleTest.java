@@ -5,18 +5,18 @@ import org.testng.AssertJUnit;
 
 public class TestNgMavenExampleTest {
 
-	@Test
+	@Test(priority = 0)
 	public void testStringCompare() {
-		System.out.println("This is TestNG-Maven Example");
+		System.out.println("Testing test with priority 0");
 		
 		String s = "initial";
 		AssertJUnit.assertEquals(s, "initial");
 		AssertJUnit.assertNotNull(s);
 	}
 	
-	@Test
+	@Test(priority = 1)
 	public void testNullablity() {
-		System.out.println("This is TestNG-Maven Example");
+		System.out.println("Testing test with priority 1");
 		
 		String s = " ";
 		AssertJUnit.assertNotNull(s);
