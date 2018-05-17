@@ -34,7 +34,7 @@ pipeline {
 
 node {
 
-   mail (to: 'pranav@techvision.net.in;jaydeepbobade@gmail.com',
+   mail (to: 'pranav@techvision.net.in',
          subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) is waiting for input",
          body: "Please go to ${env.BUILD_URL}.");
 }
