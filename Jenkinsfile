@@ -35,11 +35,11 @@ pipeline {
 node {
 
 emailext (
-  subject: "Test subject",
-  body: "Test Mail",
-  to: "pranav@techvision.net.in"
-  attachmentsPattern: 'C:\\Program Files (x86)\\Jenkins\\workspace\\Testing Github Jenkins Maven Integration\\target\\surefire-reports\\emailable-report.html'
-)  
+  to: 'pranav@techvision.net.in',
+  subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.result}]",
+  body: "Build URL: ${env.BUILD_URL}.\n\n",
+  attachLog: true,
+)
     
 }
 
