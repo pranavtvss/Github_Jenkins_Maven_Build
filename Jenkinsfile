@@ -35,10 +35,10 @@ pipeline {
 node {
 
 emailext (
-  subject: "some subject",
-  body: "${FILE,path="enteryPath/emailable-report.html"}",
-  to: "pranavbhagwat81@gmail.com"
-  attachmentsPattern: 'enteryPath/emailable-report.html'
+  subject: "Test subject",
+  body: "Test Mail",
+  to: "pranav@techvision.net.in"
+  attachmentsPattern: 'C:\\Program Files (x86)\\Jenkins\\workspace\\Testing Github Jenkins Maven Integration\\target\\surefire-reports\\emailable-report.html'
 )  
     
 }
