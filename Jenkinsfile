@@ -35,7 +35,7 @@ pipeline {
 node {
 		
 
-   mail (to: 'pranav@techvision.net.in';'jaydeepbobade@gmail.com',
+   mail (to: 'pranav@techvision.net.in;jaydeepbobade@gmail.com',
          subject: "Job '($DEFAULT_SUBJECT)' ",
          body: "<br><br>Please view the report at  : ${env.BUILD_URL}.");
 		 
