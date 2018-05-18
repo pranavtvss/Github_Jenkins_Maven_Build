@@ -31,42 +31,29 @@ pipeline {
         }
     }
     
-    
-    post {
- always {
- }
- success {
-emailext (
-  to: 'pranav@techvision.net.in',
-  subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.currentResult}]",
-  body: "Build URL: ${env.BUILD_URL}.\n\n",
-  attachLog: true,
-)
- }
- failure {
- emailext (
-  to: 'pranav@techvision.net.in',
-  subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.currentResult}]",
-  body: "Build URL: ${env.BUILD_URL}.\n\n",
-  attachLog: true,
-)
- }
- unstable {
- 
- }
- changed {
-  sh 'echo "The Pipeline was previously failing but is now successful"'
+post {
+        changed {
+            script {
+                if (currentBuild.currentResult == 'FAILURE') { // Other values: SUCCESS, UNSTABLE
+                    // Send an email only if the build status has changed from green/unstable to red
+                    emailext subject: '$DEFAULT_SUBJECT',
+                        body: '$DEFAULT_CONTENT',
+                        recipientProviders: [
+                            [$class: 'CulpritsRecipientProvider'],
+                            [$class: 'DevelopersRecipientProvider'],
+                            [$class: 'RequesterRecipientProvider']
+                        ], 
+                        replyTo: '$DEFAULT_REPLYTO',
+                        to: '$DEFAULT_RECIPIENTS'
+                }	
+            }
+        }
+    }
 
- }
-}
       
 }
 
 
-  node {
-
-
-    
-}
+ 
 
 
