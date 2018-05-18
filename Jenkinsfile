@@ -34,16 +34,42 @@ pipeline {
     
     post {
  always {
-   sh 'echo "This will always run***************************************************"'
  }
  success {
-  sh 'echo "This will run only if successful**************************************************************"'
+  node {
+
+emailext (
+  to: 'pranav@techvision.net.in',
+  subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.currentResult}]",
+  body: "Build URL: ${env.BUILD_URL}.\n\n",
+  attachLog: true,
+)
+    
+}
  }
  failure {
-  sh 'echo "This will run only if failed*********************************************************"'
+  node {
+
+emailext (
+  to: 'pranav@techvision.net.in',
+  subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.currentResult}]",
+  body: "Build URL: ${env.BUILD_URL}.\n\n",
+  attachLog: true,
+)
+    
+}
  }
  unstable {
-  sh 'echo "This will run only if the run was marked as unstable*****************************************************"'
+  node {
+
+emailext (
+  to: 'pranav@techvision.net.in',
+  subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.currentResult}]",
+  body: "Build URL: ${env.BUILD_URL}.\n\n",
+  attachLog: true,
+)
+    
+}
  }
  changed {
   sh 'echo "The Pipeline was previously failing but is now successful"'
@@ -54,15 +80,6 @@ pipeline {
 }
 
 
-node {
 
-emailext (
-  to: 'pranav@techvision.net.in',
-  subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.currentResult}]",
-  body: "Build URL: ${env.BUILD_URL}.\n\n",
-  attachLog: true,
-)
-    
-}
 
 
