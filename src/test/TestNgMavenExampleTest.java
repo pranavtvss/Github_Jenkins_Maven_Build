@@ -14,7 +14,7 @@ public class TestNgMavenExampleTest {
 		AssertJUnit.assertNotNull(s);
 	}
 	
-	@Test(priority = 1
+	@Test(priority = 1)
 	public void testNullablity() {
 		System.out.println("Testing test with priority 1");
 		
