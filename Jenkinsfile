@@ -30,6 +30,27 @@ pipeline {
             }
         }
     }
+    
+    
+    post {
+ always {
+   sh 'echo "This will always run***************************************************"'
+ }
+ success {
+  sh 'echo "This will run only if successful**************************************************************"'
+ }
+ failure {
+  sh 'echo "This will run only if failed*********************************************************"'
+ }
+ unstable {
+  sh 'echo "This will run only if the run was marked as unstable*****************************************************"'
+ }
+ changed {
+  sh 'echo "The Pipeline was previously failing but is now successful"'
+
+ }
+}
+      
 }
 
 
