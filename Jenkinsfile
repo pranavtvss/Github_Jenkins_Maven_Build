@@ -40,6 +40,7 @@ post {
                     // Send an email only if the build status has changed from green/unstable to red
                     emailext subject: '$DEFAULT_SUBJECT',
                         body: '$DEFAULT_CONTENT',
+			attachLog: true,
                         recipientProviders: [
                             [$class: 'CulpritsRecipientProvider'],
                             [$class: 'DevelopersRecipientProvider'],
@@ -47,6 +48,7 @@ post {
                         ], 
                         replyTo: '$DEFAULT_REPLYTO',
                         to: 'pranavbhagwat81@gmail.com'
+			
                 }	
             }
         }
