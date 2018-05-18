@@ -47,7 +47,7 @@ post {
                     emailext subject: '$DEFAULT_SUBJECT',
                         body: '$DEFAULT_CONTENT',
 			attachLog: true,
-			attachmentsPattern: ${FILE,path="target/surefire-reports/emailable-report.html"},
+			attachmentsPattern: 'C:/Program Files (x86)/Jenkins/workspace/Testing Github Jenkins Maven Integration/target/surefire-reports',
                         replyTo: '$DEFAULT_REPLYTO',
                         to: '$DEFAULT_RECIPIENTS'          	
             }
