@@ -37,7 +37,7 @@ node {
 
 emailext (
   to: 'pranav@techvision.net.in',
-  subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.result}]",
+  subject: "${env.JOB_NAME} #${env.BUILD_NUMBER} [${currentBuild.currentResult}]",
   body: "Build URL: ${env.BUILD_URL}.\n\n",
   attachLog: true,
 )
