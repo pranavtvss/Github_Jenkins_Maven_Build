@@ -19,7 +19,7 @@ public class TestNgMavenExampleTest {
 		System.out.println("Testing test with priority 1");
 		
 		String s = " ";
-		AssertJUnit.assertNotNull(s);
+		AssertJUnit.assertNull(s);
 	}
 
 	
