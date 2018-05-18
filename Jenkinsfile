@@ -1,3 +1,10 @@
+//'* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+//'* Module  :    Jenkins Pipeline Steps
+//'* Description : This is a pipeline script file includes three stages - compile,test,deploy,notification.
+//'* Created :    18-05-2018 17:07
+//'* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
+
+
 
 pipeline {
     agent any
