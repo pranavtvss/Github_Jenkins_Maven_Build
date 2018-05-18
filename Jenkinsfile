@@ -45,9 +45,8 @@ post {
 		echo 'Post Script running'
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
-                        body: '$DEFAULT_CONTENT',
+			body: '$DEFAULT_CONTENT',
 			attachLog: true,
-			attachmentsPattern: '**/target/surefire-reports',
                         replyTo: '$DEFAULT_REPLYTO',
                         to: '$DEFAULT_RECIPIENTS'          	
             }
