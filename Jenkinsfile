@@ -1,4 +1,4 @@
-#!groovy
+
 pipeline {
     agent any
 
@@ -32,6 +32,7 @@ pipeline {
     }
     
 post {
+	echo 'Post Script running'
         changed {
             script {
                 if (currentBuild.currentResult == 'FAILURE') { // Other values: SUCCESS, UNSTABLE
@@ -44,7 +45,7 @@ post {
                             [$class: 'RequesterRecipientProvider']
                         ], 
                         replyTo: '$DEFAULT_REPLYTO',
-                        to: '$DEFAULT_RECIPIENTS'
+                        to: 'pranavbhagwat81@gmail.com'
                 }	
             }
         }
@@ -52,8 +53,3 @@ post {
 
       
 }
-
-
- 
-
-
