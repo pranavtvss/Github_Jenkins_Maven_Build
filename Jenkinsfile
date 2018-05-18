@@ -32,8 +32,9 @@ pipeline {
     }
     
 post {
-	echo 'Post Script running'
-        changed {
+	
+        always {
+		echo 'Post Script running'
             script {
                 if (currentBuild.currentResult == 'FAILURE') { // Other values: SUCCESS, UNSTABLE
                     // Send an email only if the build status has changed from green/unstable to red
