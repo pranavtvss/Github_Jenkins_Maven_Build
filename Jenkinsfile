@@ -47,6 +47,7 @@ post {
                     emailext subject: '$DEFAULT_SUBJECT',
                         body: '$DEFAULT_CONTENT',
 			attachLog: true,
+			attachmentsPattern: ${FILE,path="target/surefire-reports/emailable-report.html"},
                         replyTo: '$DEFAULT_REPLYTO',
                         to: '$DEFAULT_RECIPIENTS'          	
             }
