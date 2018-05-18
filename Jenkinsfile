@@ -47,7 +47,7 @@ post {
                             [$class: 'RequesterRecipientProvider']
                         ], 
                         replyTo: '$DEFAULT_REPLYTO',
-                        to: 'pranavbhagwat81@gmail.com'
+                        to: '$DEFAULT_RECIPIENTS'
 			
                 }	
             }
