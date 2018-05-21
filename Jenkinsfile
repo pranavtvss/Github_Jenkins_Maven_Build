@@ -50,17 +50,12 @@ post {
 	
         always {
 		echo 'Post Script running'
-		echo 'Building Branch: ' + env.BRANCH_NAME
-                echo 'Build Number: ' + env.BUILD_NUMBER
 		
-		echo 'Jenkins url: ' + env.JENKINS_URL
-		echo 'Jenkins url: ' + JENKINS_URL
-		
-		echo JENKINS_URL+"blue/organizations/jenkins/GMJ/detail/"+JOB_NAME+"/"+ENV_BUILD_NO+"/pipeline"
+		echo 
 		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
-			body: '$DEFAULT_CONTENT <br> "  "' ,
+			body: '$DEFAULT_CONTENT <br> JENKINS_URL+"blue/organizations/jenkins/GMJ/detail/"+JOB_NAME+"/"+ENV_BUILD_NO+"/pipeline" ' ,
 			attachLog: true,
                         replyTo: '$DEFAULT_REPLYTO',
                         to: '$DEFAULT_RECIPIENTS'          	
