@@ -50,8 +50,7 @@ post {
 	
         always {
 		echo 'Post Script running'
-		
-		echo 
+	
 		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
