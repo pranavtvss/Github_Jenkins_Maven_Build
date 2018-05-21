@@ -9,6 +9,11 @@
 
 pipeline {
     agent any
+	
+	environment {
+        ENV_NAME = "${env.BRANCH_NAME}"
+	ENV_BUILD_NO = "${env.BUILD_NUMBER}"
+    }
 
     stages {
         stage ('Compile Stage') {
@@ -43,7 +48,9 @@ post {
 	
         always {
 		echo 'Post Script running'
-		echo '${env.RUN_DISPLAY_URL}'
+		echo 'Building Branch: ' + env.BRANCH_NAME
+                echo 'Build Number: ' + env.BUILD_NUMBER
+		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
 			body: '$DEFAULT_CONTENT <br> "  "' ,
