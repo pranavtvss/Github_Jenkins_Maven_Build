@@ -54,7 +54,7 @@ post {
 		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
-			body: '$DEFAULT_CONTENT <br> ' + JENKINS_URL+"blue/organizations/jenkins/GMJ/detail/"+JOB_NAME+"/"+ENV_BUILD_NO+"/pipeline"  ,
+			body: '$DEFAULT_CONTENT <br><br><br>"Click the link below to show Blue Ocean Console for your current build : " <br>' + JENKINS_URL+"blue/organizations/jenkins/GMJ/detail/"+JOB_NAME+"/"+ENV_BUILD_NO+"/pipeline"  ,
 			attachLog: true,
                         replyTo: '$DEFAULT_REPLYTO',
                         to: '$DEFAULT_RECIPIENTS'          	
