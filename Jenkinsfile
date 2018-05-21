@@ -46,7 +46,7 @@ post {
 		echo '${env.RUN_DISPLAY_URL}'
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
-			body: '$DEFAULT_CONTENT' ,
+			body: '$DEFAULT_CONTENT' <br> 'nexxt line',
 			attachLog: true,
                         replyTo: '$DEFAULT_REPLYTO',
                         to: '$DEFAULT_RECIPIENTS'          	
