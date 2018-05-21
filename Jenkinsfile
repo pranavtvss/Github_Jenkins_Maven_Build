@@ -14,6 +14,7 @@ pipeline {
         ENV_NAME = "${env.BRANCH_NAME}"
 	ENV_BUILD_NO = "${env.BUILD_NUMBER}"
 	JENKINS_URL = "${env.JENKINS_URL}"
+	JOB_NAME = "${env.JOB_NAME}"
     }
 
     stages {
@@ -54,6 +55,8 @@ post {
 		
 		echo 'Jenkins url: ' + env.JENKINS_URL
 		echo 'Jenkins url: ' + JENKINS_URL
+		
+		echo JENKINS_URL+"blue/organizations/jenkins/GMJ/detail/"+JOB_NAME+"/"+ENV_BUILD_NO+"/pipeline"
 		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
