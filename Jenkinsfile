@@ -50,7 +50,7 @@ post {
 	
         always {
 		echo 'Post Script running'
-	
+		archive "target/artifacts/"
 		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
