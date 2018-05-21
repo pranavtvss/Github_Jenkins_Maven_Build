@@ -51,7 +51,7 @@ post {
         always {
 		echo 'Post Script running'
 		archiveArtifacts artifacts: '**/*.jar', fingerprint: true
-            	 junit 'build/reports/**/*.xml'
+            	 junit 'target/**/*.xml'
 		archive "target/**/*"
 		
             script {
