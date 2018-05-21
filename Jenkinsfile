@@ -53,6 +53,7 @@ post {
 		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
+			presendScript: '''def reportPath = build.getWorkspace().child("target/surefire-reports/emailable-report.html") msg.setContent(reportPath.readToString(),"text/html");''',
 			body: '$DEFAULT_CONTENT <br><br><br>Click the link below to show Blue Ocean Console for your current build :  <br>' + JENKINS_URL+"blue/organizations/jenkins/"+JOB_NAME+"/detail/"+JOB_NAME+"/activity/"  ,
 			attachLog: true,
                         replyTo: '$DEFAULT_REPLYTO',
