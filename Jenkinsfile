@@ -45,7 +45,7 @@ post {
 		echo 'Post Script running'
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
-			body: '$DEFAULT_CONTENT',
+			body: '$DEFAULT_CONTENT' <br><br> '${env.RUN_DISPLAY_URL}',
 			attachLog: true,
                         replyTo: '$DEFAULT_REPLYTO',
                         to: '$DEFAULT_RECIPIENTS'          	
