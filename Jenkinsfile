@@ -50,9 +50,7 @@ post {
 	
         always {
 		echo 'Post Script running'
-		archiveArtifacts artifacts: '**/*.jar', fingerprint: true
             	 junit 'target/**/*.xml'
-		archive "target/**/*"
 		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
