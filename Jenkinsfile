@@ -53,7 +53,7 @@ post {
 		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',    
-			 body: '$DEFAULT_CONTENT <br><br><br>Click the link below to show Blue Ocean Console for your current build :  <br>  <a href=""+JENKINS_URL+"blue/organizations/jenkins/"+JOB_NAME+"/detail/"+JOB_NAME+"/activity/">Visit W3Schools.com!</a>',     
+			body: '$DEFAULT_CONTENT <br><br><br>Click the link below to show Blue Ocean Console for your current build :  <br><a href="'+JENKINS_URL+"blue/organizations/jenkins/"+JOB_NAME+"/detail/"+JOB_NAME+"/activity/"+'+">' + JENKINS_URL+"blue/organizations/jenkins/"+JOB_NAME+"/detail/"+JOB_NAME+"/activity/"+"</a>"  ,
 			attachLog: true,
                         replyTo: '$DEFAULT_REPLYTO',
                         to: '$DEFAULT_RECIPIENTS'          	
