@@ -50,7 +50,6 @@ post {
 	
         always {
 		echo 'Post Script running'
-            	 junit 'target/**/testng-results.xml'
 		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
