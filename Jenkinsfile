@@ -13,6 +13,7 @@ pipeline {
 	environment {
         ENV_NAME = "${env.BRANCH_NAME}"
 	ENV_BUILD_NO = "${env.BUILD_NUMBER}"
+	JENKINS_URL = "${env.JENKINS_URL}"
     }
 
     stages {
@@ -50,6 +51,9 @@ post {
 		echo 'Post Script running'
 		echo 'Building Branch: ' + env.BRANCH_NAME
                 echo 'Build Number: ' + env.BUILD_NUMBER
+		
+		echo 'Jenkins url: ' + env.JENKINS_URL
+		echo 'Jenkins url: ' + JENKINS_URL
 		
             script {
                     emailext subject: '$DEFAULT_SUBJECT',
