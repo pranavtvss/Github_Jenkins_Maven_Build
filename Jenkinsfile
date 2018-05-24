@@ -39,7 +39,7 @@ pipeline {
 	stage ('REST-API Stage') {
 
             steps {
-                    bat 'phantomjs src\test\plg.js'
+                    bat 'phantomjs src/test/plg.js'
                 
             }
         }
