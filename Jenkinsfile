@@ -97,11 +97,11 @@ node {
 
     }
 	stage ('Deployment Stage') {
-            steps {
+           
                 withMaven(maven : 'MAVEN_HOME') {
                     bat 'mvn install'
                 }
-            }
+           
         }
 
 }
