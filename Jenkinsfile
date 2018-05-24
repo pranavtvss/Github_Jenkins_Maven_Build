@@ -25,8 +25,8 @@ pipeline {
                     bat 'mvn clean compile'
                 }
             }
-        }
-
+        }	    
+	    
         stage ('Testing Stage') {
 
             steps {
@@ -36,6 +36,14 @@ pipeline {
             }
         }
 
+	stage ('REST-API Stage') {
+
+            steps {
+             
+                    bat 'phantomjs plg.js'
+                
+            }
+        }
 
         stage ('Deployment Stage') {
             steps {
