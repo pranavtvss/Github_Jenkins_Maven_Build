@@ -36,14 +36,6 @@ pipeline {
             }
         }
 
-	stage ('REST-API Stage') {
-
-            steps {
-                    bat 'phantomjs src/test/plg.js'
-		    bat 'copy C:\\Users\\Admin\\.jenkins\\workspace\\Testing_Github_Jenkins_Maven_Integration\\src\\test\\results.xml C:\\Users\\Admin\\.jenkins\\workspace\\Testing_Github_Jenkins_Maven_Integration\\target\\surefire-reports'
-                
-            }
-        }
 
         stage ('Deployment Stage') {
             steps {
@@ -71,3 +63,46 @@ post {
 
       
 }
+
+
+node {
+
+    stage('aDDING qUnit tests') {
+
+        // checkout the latest version from Git
+
+    }
+
+    stage('Test') {
+
+        try {
+
+            // run PhantomJS
+
+            bat 'phantomjs src/test/plg.js'
+
+            // move result file into workspace
+
+			 bat 'copy C:\\Users\\Admin\\.jenkins\\workspace\\Testing_Github_Jenkins_Maven_Integration\\src\\test\\results.xml C:\\Users\\Admin\\.jenkins\\workspace\\Testing_Github_Jenkins_Maven_Integration\\target\\surefire-reports'
+            //sh 'mv ${JENKINS_HOME}/path/to/unit/tests/results.xml ${JENKINS_HOME}/workspace/${JOB_NAME}'
+
+            // archive test results with relative path from ${JENKINS_HOME}/workspace
+
+            step([$class: 'JUnitResultArchiver', testResults: '\\Testing_Github_Jenkins_Maven_Integration\\target\\surefire-reports\\results.xml'])
+
+            // report to JUnit with relative path from ${JENKINS_HOME}/workspace
+
+            junit '\\Testing_Github_Jenkins_Maven_Integration\\target\\surefire-reports\\results.xml'
+
+        } catch(err) {
+
+            throw err
+
+        }
+
+    }
+
+    
+
+}
+
