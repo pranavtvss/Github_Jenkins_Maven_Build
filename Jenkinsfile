@@ -39,9 +39,10 @@ pipeline {
 	stage ('REST-API Stage') {
 
             steps {
-             
+             	    bat 'cd C:/Users/Admin/.jenkins/workspace/Github_Jenkins_Maven_Build/src/test'
                     bat 'phantomjs plg.js'
-                
+                    bat 'cd ..'
+		    bat 'cd ..'
             }
         }
 
