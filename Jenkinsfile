@@ -15,6 +15,7 @@ pipeline {
 	ENV_BUILD_NO = "${env.BUILD_NUMBER}"
 	JENKINS_URL = "${env.JENKINS_URL}"
 	JOB_NAME = "${env.JOB_NAME}"
+	JENKINS_HOME = "${env.JENKINS_HOME}"
     }
 
     stages {
