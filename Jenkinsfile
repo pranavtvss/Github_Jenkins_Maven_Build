@@ -28,7 +28,7 @@ pipeline {
             }
         }	    
 	    
-        stage ('Testing Stage') {
+        stage ('Unit Testing Stage') {
 
             steps {
                 withMaven(maven : 'MAVEN_HOME') {
@@ -64,7 +64,7 @@ node {
 
    
 
-    stage('QUNIT INTEGRATION') {
+    stage('REST API Testing Stage') {
 
         try {
 
