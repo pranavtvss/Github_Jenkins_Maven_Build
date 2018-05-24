@@ -7,7 +7,7 @@ var page = require('webpage').create();
 console.log(window.location.hostname);  
 console.log(window.location.href); 
 console.log(window.location.pathname);
-var url = 'file:///cd C:/Users/Admin/.jenkins/workspace/Testing_Github_Jenkins_Maven_Integration/src/test/index.html';
+var url = 'file:///C:/Users/Admin/.jenkins/workspace/Testing_Github_Jenkins_Maven_Integration/src/test/index.html';
 console.log("Opening " + url);
 
 page.open(url, function (status) {
