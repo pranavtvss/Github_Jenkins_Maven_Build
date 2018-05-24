@@ -89,11 +89,11 @@ node {
 		
 		
 		
-            step([$class: 'JUnitResultArchiver', testResults: ${JENKINS_HOME}+'/workspace/Testing_Github_Jenkins_Maven_Integration/target/surefire-reports/results.xml'])
+            step([$class: 'JUnitResultArchiver', testResults: 'C:/Users/Admin/.jenkins/workspace/Testing_Github_Jenkins_Maven_Integration/target/surefire-reports/results.xml'])
 
             // report to JUnit with relative path from ${JENKINS_HOME}/workspace
 
-            junit  ${JENKINS_HOME}+'/workspace/Testing_Github_Jenkins_Maven_Integration/target/surefire-reports/results.xml'
+            junit  'C:/Users/Admin/.jenkins/workspace/Testing_Github_Jenkins_Maven_Integration/target/surefire-reports/results.xml'
 
         } catch(err) {
 
