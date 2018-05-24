@@ -40,8 +40,7 @@ pipeline {
 
             steps {
                     bat 'phantomjs src\test\plg.js'
-                    bat 'cd ..'
-		    bat 'cd ..'
+                
             }
         }
 
