@@ -40,7 +40,7 @@ pipeline {
 
             steps {
                     bat 'phantomjs src/test/plg.js'
-		    bat 'copy C:/Users/Admin/.jenkins/workspace/Testing_Github_Jenkins_Maven_Integration/src/test/results.xml C:/Users/Admin/.jenkins/workspace/Testing_Github_Jenkins_Maven_Integration/target/surefire-reports'
+		    bat 'copy C:\\Users\\Admin\\.jenkins\\workspace\\Testing_Github_Jenkins_Maven_Integration\\src\\test\\results.xml C:\\Users\\Admin\\.jenkins\\workspace\\Testing_Github_Jenkins_Maven_Integration\\target\\surefire-reports'
                 
             }
         }
