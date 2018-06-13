@@ -70,18 +70,18 @@ node {
 
             // run PhantomJS
 
-            //bat 'phantomjs src/test/plg.js'
+            bat 'phantomjs src/test/plg.js'
 
             // move result file into workspace
 
-			 //bat 'copy C:\\Users\\Admin\\.jenkins\\workspace\\Testing_Github_Jenkins_Maven_Integration\\src\\test\\results.xml C:\\Users\\Admin\\.jenkins\\workspace\\Testing_Github_Jenkins_Maven_Integration\\target\\surefire-reports'
+			 bat 'copy C:\\Users\\Admin\\.jenkins\\workspace\\Testing_Github_Jenkins_Maven_Integration\\src\\test\\results.xml C:\\Users\\Admin\\.jenkins\\workspace\\Testing_Github_Jenkins_Maven_Integration\\target\\surefire-reports'
             //sh 'mv ${JENKINS_HOME}/path/to/unit/tests/results.xml ${JENKINS_HOME}/workspace/${JOB_NAME}'
 
             // archive test results with relative path from ${JENKINS_HOME}/workspace
 		
 		
 		
-            //step([$class: 'JUnitResultArchiver', testResults: '**results.xml'])
+            step([$class: 'JUnitResultArchiver', testResults: '**results.xml'])
 
             // report to JUnit with relative path from ${JENKINS_HOME}/workspace
 
