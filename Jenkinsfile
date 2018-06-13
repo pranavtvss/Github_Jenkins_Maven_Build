@@ -81,11 +81,11 @@ node {
 		
 		
 		
-            step([$class: 'JUnitResultArchiver', testResults: '**results.xml'])
+            //step([$class: 'JUnitResultArchiver', testResults: '**results.xml'])
 
             // report to JUnit with relative path from ${JENKINS_HOME}/workspace
 
-            //junit  '**results.xml'
+            junit  '**results.xml'
 
         } catch(err) {
 
